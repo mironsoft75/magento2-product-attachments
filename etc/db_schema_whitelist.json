@@ -1,0 +1,15 @@
+{
+    "a3naumov_attachments": {
+        "column": {
+            "attachment_id": true,
+            "file": true,
+            "name": true,
+            "label": true,
+            "created_at": true,
+            "updated_at": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    }
+}
