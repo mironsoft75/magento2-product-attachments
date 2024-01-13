@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="A3Naumov_ProductAttachments::product_attachments" title="Product Attachments" translate="title" module="A3Naumov_ProductAttachments" sortOrder="10" parent="Magento_Catalog::catalog" resource="A3Naumov_ProductAttachments::product_attachments"/>
+        <add id="A3Naumov_ProductAttachments::attachments_management" title="Attachments Management" translate="title" module="A3Naumov_ProductAttachments" sortOrder="10" parent="A3Naumov_ProductAttachments::product_attachments" action="a3naumov/attachments_management/index" resource="A3Naumov_ProductAttachments::attachments_management"/>
+    </menu>
+</config>

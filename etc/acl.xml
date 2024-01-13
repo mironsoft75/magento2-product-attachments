@@ -3,10 +3,17 @@
     <acl>
         <resources>
             <resource id="Magento_Backend::admin">
+                <resource id="Magento_Backend::content">
+                    <resource id="Magento_Backend::content_elements">
+                        <resource id="A3Naumov_ProductAttachments::product_attachments" title="Product Attachments" translate="title" sortOrder="10">
+                            <resource id="A3Naumov_ProductAttachments::attachments_management" title="Attachments Management" translate="title" sortOrder="10"/>
+                        </resource>
+                    </resource>
+                </resource>
                 <resource id="Magento_Backend::stores">
                     <resource id="Magento_Backend::stores_settings">
                         <resource id="Magento_Config::config">
-                            <resource id="A3Naumov_ProductAttachments::product_attachments" title="Product Attachments" translate="title" sortOrder="10"/>
+                            <resource id="A3Naumov_ProductAttachments::product_attachments_config" title="Product Attachments" translate="title" sortOrder="10"/>
                         </resource>
                     </resource>
                 </resource>
