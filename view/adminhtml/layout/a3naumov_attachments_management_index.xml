@@ -13,7 +13,7 @@
             </action>
         </referenceBlock>
         <referenceContainer name="content">
-            <uiComponent name="attachments_listing"/>
+            <uiComponent name="a3naumov_attachments_management_listing"/>
         </referenceContainer>
     </body>
 </page>

@@ -2,16 +2,23 @@
 <listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
     <argument name="data" xsi:type="array">
         <item name="js_config" xsi:type="array">
-            <item name="provider" xsi:type="string">attachments_listing.attachments_listing_data_source</item>
+            <item name="provider" xsi:type="string">a3naumov_attachments_management_listing.a3naumov_attachments_management_listing_data_source</item>
         </item>
     </argument>
     <settings>
+        <buttons>
+            <button name="add">
+                <url path="*/*/new"/>
+                <class>primary</class>
+                <label translate="true">Add New Attachment</label>
+            </button>
+        </buttons>
         <spinner>attachments_columns</spinner>
         <deps>
-            <dep>attachments_listing.attachments_listing_data_source</dep>
+            <dep>a3naumov_attachments_management_listing.a3naumov_attachments_management_listing_data_source</dep>
         </deps>
     </settings>
-    <dataSource name="attachments_listing_data_source" component="Magento_Ui/js/grid/provider">
+    <dataSource name="a3naumov_attachments_management_listing_data_source" component="Magento_Ui/js/grid/provider">
         <settings>
             <storageConfig>
                 <param name="indexField" xsi:type="string">attachment_id</param>
@@ -19,7 +26,7 @@
             <updateUrl path="mui/index/render"/>
         </settings>
         <aclResource>A3Naumov_ProductAttachments::attachments_management</aclResource>
-        <dataProvider class="A3Naumov\ProductAttachments\Ui\DataProvider\AttachmentsDataProvider" name="attachments_listing_data_source">
+        <dataProvider class="A3Naumov\ProductAttachments\Ui\DataProvider\AttachmentsDataProvider" name="a3naumov_attachments_management_listing_data_source">
             <settings>
                 <requestFieldName>id</requestFieldName>
                 <primaryFieldName>attachment_id</primaryFieldName>
