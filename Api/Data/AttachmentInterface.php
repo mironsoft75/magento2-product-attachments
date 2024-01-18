@@ -8,5 +8,5 @@ use Magento\Framework\Api\CustomAttributesDataInterface;
 
 interface AttachmentInterface extends CustomAttributesDataInterface
 {
-
+    public const ID = 'attachment_id';
 }

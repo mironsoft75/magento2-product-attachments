@@ -38,9 +38,12 @@ class DataProvider extends ModifierPoolDataProvider
         );
     }
 
-    public function getData()
+    /**
+     * @inheirtDoc
+     */
+    public function getData(): array
     {
-        if (isset($this->loadedData)) {
+        if (!empty($this->loadedData)) {
             return $this->loadedData;
         }
 

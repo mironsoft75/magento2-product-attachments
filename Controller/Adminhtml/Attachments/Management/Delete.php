@@ -5,23 +5,19 @@ declare(strict_types=1);
 namespace A3Naumov\ProductAttachments\Controller\Adminhtml\Attachments\Management;
 
 use A3Naumov\ProductAttachments\Api\AttachmentRepositoryInterface;
-use A3Naumov\ProductAttachments\Api\Data\AttachmentInterfaceFactory;
 use Magento\Framework\App\Action\HttpPostActionInterface;
-use Magento\Framework\App\Request\DataPersistorInterface;
 use Magento\Framework\App\RequestInterface;
 use Magento\Framework\Controller\ResultFactory;
 use Magento\Framework\Controller\ResultInterface;
 use Magento\Framework\Message\ManagerInterface;
 
-class Save implements HttpPostActionInterface
+class Delete implements HttpPostActionInterface
 {
     public function __construct(
         protected RequestInterface $request,
         protected ResultFactory $resultFactory,
-        protected AttachmentInterfaceFactory $attachmentFactory,
         protected AttachmentRepositoryInterface $attachmentRepository,
         protected ManagerInterface $messageManager,
-        protected DataPersistorInterface $dataPersistor,
     ) {
     }
 
@@ -31,23 +27,22 @@ class Save implements HttpPostActionInterface
     public function execute(): ResultInterface
     {
         $resultRedirect = $this->resultFactory->create(ResultFactory::TYPE_REDIRECT);
-        $data = $this->request->getPostValue();
+        $id = $this->request->getParam('attachment_id');
 
-        if ($data) {
-            $attachment = $this->attachmentFactory->create();
-            $attachment->setData($data);
-
+        if ($id) {
             try {
-                $this->attachmentRepository->save($attachment);
-                $this->messageManager->addSuccessMessage(__('You saved the attachment.'));
-                $this->dataPersistor->clear('a3naumov_attachment');
+                $attachment = $this->attachmentRepository->getById((int) $id);
+                $this->attachmentRepository->delete($attachment);
+                $this->messageManager->addSuccessMessage(__('You deleted the attachment.'));
+
+                return $resultRedirect->setPath('*/*/');
             } catch (\Exception $e) {
                 $this->messageManager->addErrorMessage($e->getMessage());
-                $this->dataPersistor->set('a3naumov_attachment', $data);
-
-                return $resultRedirect->setPath('*/*/edit', ['id' => $attachment->getId()]);
+                return $resultRedirect->setPath('*/*/edit', ['attachment_id' => $id]);
             }
         }
+
+        $this->messageManager->addErrorMessage(__('We can\'t find a attachment to delete.'));
 
         return $resultRedirect->setPath('*/*/');
     }

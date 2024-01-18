@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace A3Naumov\ProductAttachments\Ui\DataProvider;
+namespace A3Naumov\ProductAttachments\Ui\Component\DataProvider;
 
 use A3Naumov\ProductAttachments\Model\ResourceModel\Attachment\Collection;
 use A3Naumov\ProductAttachments\Model\ResourceModel\Attachment\CollectionFactory;

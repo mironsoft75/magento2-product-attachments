@@ -8,7 +8,7 @@ use A3Naumov\ProductAttachments\Model\ResourceModel\Attachment\CollectionFactory
 use Magento\Framework\App\Action\HttpPostActionInterface;
 use Magento\Framework\Controller\ResultFactory;
 use Magento\Framework\Controller\ResultInterface;
-use Magento\Framework\Message\ManagerInterface as MessageManagerInterface;
+use Magento\Framework\Message\ManagerInterface;
 use Magento\Ui\Component\MassAction\Filter;
 
 class MassDelete implements HttpPostActionInterface
@@ -16,7 +16,7 @@ class MassDelete implements HttpPostActionInterface
     public function __construct(
         protected Filter $filter,
         protected CollectionFactory $collectionFactory,
-        protected MessageManagerInterface $messageManager,
+        protected ManagerInterface $messageManager,
         protected ResultFactory $resultFactory,
     ) {
     }

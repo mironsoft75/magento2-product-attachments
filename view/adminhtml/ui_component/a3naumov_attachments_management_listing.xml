@@ -26,7 +26,7 @@
             <updateUrl path="mui/index/render"/>
         </settings>
         <aclResource>A3Naumov_ProductAttachments::attachments_management</aclResource>
-        <dataProvider class="A3Naumov\ProductAttachments\Ui\DataProvider\AttachmentsDataProvider" name="a3naumov_attachments_management_listing_data_source">
+        <dataProvider class="A3Naumov\ProductAttachments\Ui\Component\DataProvider\AttachmentsDataProvider" name="a3naumov_attachments_management_listing_data_source">
             <settings>
                 <requestFieldName>id</requestFieldName>
                 <primaryFieldName>attachment_id</primaryFieldName>
@@ -117,5 +117,10 @@
                 <label translate="true">Updated At</label>
             </settings>
         </column>
+        <actionsColumn name="actions" class="A3Naumov\ProductAttachments\Ui\Component\Listing\Column\AttachmentActions">
+            <settings>
+                <indexField>attachment_id</indexField>
+            </settings>
+        </actionsColumn>
     </columns>
 </listing>
