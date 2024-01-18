@@ -40,10 +40,10 @@ class Save implements HttpPostActionInterface
             try {
                 $this->attachmentRepository->save($attachment);
                 $this->messageManager->addSuccessMessage(__('You saved the attachment.'));
-                $this->dataPersistor->clear('a3naumov_attachments');
+                $this->dataPersistor->clear('a3naumov_attachment');
             } catch (\Exception $e) {
                 $this->messageManager->addErrorMessage($e->getMessage());
-                $this->dataPersistor->set('a3naumov_attachments', $data);
+                $this->dataPersistor->set('a3naumov_attachment', $data);
 
                 return $resultRedirect->setPath('*/*/edit', ['id' => $attachment->getId()]);
             }

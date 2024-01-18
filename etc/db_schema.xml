@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
-    <table name="a3naumov_attachments" engine="innodb" resource="default" comment="Attachments Table">
+    <table name="a3naumov_attachment" engine="innodb" resource="default" comment="Attachments Table">
         <column xsi:type="int" name="attachment_id" unsigned="true" nullable="false" identity="true" comment="Attachment ID"/>
         <column xsi:type="varchar" name="file" nullable="false" length="255" comment="Attachment File"/>
         <column xsi:type="varchar" name="name" nullable="false" length="255" comment="Attachment Name"/>

@@ -51,7 +51,7 @@ class DataProvider extends ModifierPoolDataProvider
             $this->loadedData[$attachment->getId()] = $attachment->getData();
         }
 
-        $data = $this->dataPersistor->get('a3naumov_attachments');
+        $data = $this->dataPersistor->get('a3naumov_attachment');
 
         if (!empty($data)) {
             $attachment = $this->collection->getNewEmptyItem();
@@ -59,7 +59,7 @@ class DataProvider extends ModifierPoolDataProvider
 
             $this->loadedData[$attachment->getId()] = $attachment->getData();
 
-            $this->dataPersistor->clear('a3naumov_attachments');
+            $this->dataPersistor->clear('a3naumov_attachment');
         }
 
         return $this->loadedData;

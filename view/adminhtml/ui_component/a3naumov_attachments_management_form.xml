@@ -16,7 +16,7 @@
             </button>
             <button name="save">
                 <class>save primary</class>
-                <label translate="true">Save</label>
+                <label translate="true">Save Attachment</label>
             </button>
         </buttons>
         <namespace>a3naumov_attachments_management_form</namespace>

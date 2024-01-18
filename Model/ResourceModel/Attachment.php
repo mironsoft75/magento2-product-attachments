@@ -13,6 +13,6 @@ class Attachment extends AbstractDb
      */
     protected function _construct(): void
     {
-        $this->_init('a3naumov_attachments', 'attachment_id');
+        $this->_init('a3naumov_attachment', 'attachment_id');
     }
 }
